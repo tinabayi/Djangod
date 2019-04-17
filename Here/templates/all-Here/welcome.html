@@ -1,0 +1,22 @@
+
+{%extends 'all-Here/base.html'%}
+
+{% block content %}
+{{block.super}}
+
+{% for item in projects %}   
+    {{item.project_name}}
+    {% autoescape on %}
+    {{item.project_description| safe}}
+    {% endautoescape %}
+
+    <li>
+    <a href="{%url 'comment'%}">make comment</a>
+    </li>
+    {% for item in comments %}
+    {% autoescape on %}
+    {{item.comments| safe}}
+    {% endautoescape %}
+    {% endfor %} 
+    {% endfor %}
+{% endblock %}
