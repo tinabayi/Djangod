@@ -30,18 +30,15 @@
 
         </ul>
         <ul>
-        <li><a class="navbar-brand" href="{% url 'welcome' %}">Here Projects</a></li>
+        <li><a href="{% url 'welcome' %}">Here Projects</a></li>
         <li><a href="/accounts/register">Register</a></li>
         <li><a href="/accounts/login">Login</a></li> 
        <li><a href="/logout">Logout</a></li>
-        </ul>
-        <div id="button"  <button type="button" class="btn btn-info"><a href="{%url 'new-image'%}">Post Project</a></button>
-        </div> 
-        </div>
-        <div class="col-sm-6 col-md-6">
-
+       <li><a href="{%url 'new-image'%}">Post Project</a></li>
+       
+        
           {% if user.is_authenticated %}
-          <ul>
+         
             <li class="dropdown">
               <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
                         <span class="caret"></span>

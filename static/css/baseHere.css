@@ -25,3 +25,6 @@ li a {
 li a:hover {
   background-color: #111;
 }
+body{
+  background-image: url('https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+}
