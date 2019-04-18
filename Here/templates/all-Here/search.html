@@ -1,26 +1,30 @@
 {%extends 'all-Here/base.html'%} 
 {% block content %}
 <div class="container">
+ <div class="row">
+
+
 
   <div class="row">
     {% if projects%}
-      <h2>Found {{ project|length }} of searched term {{message}}</h2>
+      <h1>Found {{ projects|length }} of searched term {{message}}</h1>
     {% else %}
-      <h2> Found 0 project for the search term {{message}}</h2>
+      <h1> Found 0 articles for the search term {{message}}</h1>
     {% endif %}
 
+
+    {% for image in projects %}
+    <div class="col-sm-6 col-md-3">
+
+ <img src="{{image.project.url}}">
+ <h2>{{image.project_description}}</h2>
+</div>
+{% endfor %}
+
+ </div>
+
   </div>
 
-  <div class="row">
-
-  {% if project %}
-    {% for item in projects %}
-      <div class="col-sm-6 col-md-3">
-          <h1>{{item.project_name}}</h1>
-         
-      </div>
-    {% endfor %}
-  {% endif %}
-  </div>
+  
 </div>
 {% endblock %}

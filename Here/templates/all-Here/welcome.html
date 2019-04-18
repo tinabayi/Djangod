@@ -1,22 +1,21 @@
 
+
 {%extends 'all-Here/base.html'%}
 
 {% block content %}
 {{block.super}}
+<link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Merienda|Vidaloka" rel="stylesheet">
+<div class="container">
+<h1>Your project on the internet</h1>
+{% for item in projects %}
+ <a href="/image/{{item.id}}"><img src="{{item.project.url}}" alt="image"></a>
 
-{% for item in projects %}   
-    {{item.project_name}}
-    {% autoescape on %}
-    {{item.project_description| safe}}
-    {% endautoescape %}
 
-    <li>
-    <a href="{%url 'comment'%}">make comment</a>
-    </li>
-    {% for item in comments %}
-    {% autoescape on %}
-    {{item.comments| safe}}
-    {% endautoescape %}
-    {% endfor %} 
-    {% endfor %}
-{% endblock %}
+{% endfor %}
+
+  </div>
+  
+   
+     
+    {% endblock %}
